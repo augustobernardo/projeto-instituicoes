@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import Home from '../src/components/HelloWorld.vue'
 </script>
 
 <template>
-  <Home />
+  <router-view />
 </template>
 
 <style scoped>
