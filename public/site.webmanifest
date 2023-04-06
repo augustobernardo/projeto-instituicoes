@@ -1,7 +1,7 @@
 {
     "name": "AF Solidário",
     "short_name": "AF Solidário",
-    "start_url": "/",
+    "start_url": "/home",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
