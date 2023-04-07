@@ -1,8 +1,7 @@
 <template>
     <li class="list-group-item d-flex border-0 rounded-3 justify-content-between align-items-center mb-2 card-custom">
         <div class="d-flex align-items-center">
-            <img :src="imageCard" alt="" style="width: 45px; height: 45px"
-                class="rounded-circle" />
+            <img :src="imageCard" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
             <div class="ms-3">
                 <p class="fw-bold mb-1">{{ titleCard }}</p>
                 <p class="text-muted mb-0 description">{{ descriptionCard }}</p>
@@ -21,6 +20,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Swal from 'sweetalert2'
+import Image from '../assets/succes.svg'
 
 export default defineComponent({
     name: 'Card',
@@ -43,12 +43,12 @@ export default defineComponent({
             Swal.fire({
                 title: 'Obrigado!',
                 text: 'Sua doação foi realizada com sucesso!',
-                icon: 'success',
+                imageUrl: Image,
+                imageAlt: 'Sucesso!',
                 showConfirmButton: false,
-                timer: 1800
+                timer: 2200,
+                timerProgressBar: true,
             })
-
-
         }
     }
 })
