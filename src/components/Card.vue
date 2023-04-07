@@ -1,57 +1,68 @@
 <template>
     <li class="list-group-item d-flex border-0 rounded-3 justify-content-between align-items-center mb-2 card-custom">
         <div class="d-flex align-items-center">
-            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
+            <img :src="imageCard" alt="" style="width: 45px; height: 45px"
                 class="rounded-circle" />
             <div class="ms-3">
                 <p class="fw-bold mb-1">{{ titleCard }}</p>
-                <p class="text-muted mb-0 local">{{ localCard }}</p>
+                <p class="text-muted mb-0 description">{{ descriptionCard }}</p>
             </div>
         </div>
 
-        <router-link :to="route" class="btn btn-link btn-rounded btn-sm router-link">
+        <button class="btn btn-link btn-rounded btn-sm" @click="succesAlert">
             <span class="material-icons-round custom-span">
-                chevron_right
+                volunteer_activism
             </span>
-        </router-link>
+        </button>
+
     </li>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Swal from 'sweetalert2'
 
 export default defineComponent({
     name: 'Card',
     props: {
-        route: {
-            type: String,
-            required: true
-        },
         titleCard: {
             type: String,
             required: true
         },
-        localCard: {
+        descriptionCard: {
             type: String,
             required: true
+        },
+        imageCard: {
+            type: String,
+            required: true
+        },
+    },
+    methods: {
+        succesAlert() {
+            Swal.fire({
+                title: 'Obrigado!',
+                text: 'Sua doação foi realizada com sucesso!',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1800
+            })
+
+
         }
     }
 })
 </script>
 
 <style scoped>
-.router-link {
-    font-family: Popins, sans-serif;
-    text-decoration: none;
-}
-
 .custom-span {
-    color: black;
+    color: #00bd5e;
     font-size: 1.5rem;
     margin-top: 0.5rem;
 }
+
 .custom-span:hover {
-    color: #00bd5e;
+    color: #00a352;
     transition: all 300ms ease;
 }
 
@@ -65,4 +76,7 @@ export default defineComponent({
     transition: all 300ms ease;
 }
 
+.description {
+    font-size: smaller;
+}
 </style>

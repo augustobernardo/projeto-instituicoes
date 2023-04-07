@@ -2,25 +2,25 @@
     <!-- Title -->
     <nav class="navbar custom-bg">
         <div class="container-fluid justify-content-center">
-            <span class="navbar-brand mb-0 h1 title">AF Solidário</span>
+            <span class="navbar-brand mb-0 h1 title">AF SOLIDÁRIO</span>
         </div>
     </nav>
 
     <!-- Content -->
     <div class="list-instituicoes-header">
         <span id="list-title">
-            Lista de
-            <span id="instituicoes">Instituições</span>
+            Faça sua parte,
+            <span id="instituicoes">Doe</span>
+            agora mesmo!
         </span>
     </div>
     <div class="container">
         <ul class="list-group list-group-light">
-            <Card route="/about/inst1" titleCard="Instituição 1" localCard="Local 1" />
-            <Card route="/about" titleCard="Instituição 2" localCard="Local 2" />
-            <Card route="/about" titleCard="Instituição 3" localCard="Local 3" />
-            <Card route="/about" titleCard="Instituição 4" localCard="Local 4" />
-            <Card route="/about" titleCard="Instituição 5" localCard="Local 5" />
-            <Card route="/about" titleCard="Instituição 6" localCard="Local 6" />
+            <Card v-for="instituicao in inst" 
+                :key="instituicao.id"
+                :imageCard="instituicao.image"
+                :titleCard="instituicao.title" 
+                :descriptionCard="instituicao.description" />
         </ul>
     </div>
 </template>
@@ -28,11 +28,19 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Card from '../components/Card.vue'
+import InstituicoesArray from '../class/InstClass';
+
+const instituicoes = new InstituicoesArray();
 
 export default defineComponent({
     name: 'Home',
     components: {
         Card
+    },
+    data() {
+        return {
+            inst: instituicoes.returnInstituicoes()
+        }
     }
 })
 
@@ -40,7 +48,7 @@ export default defineComponent({
 
 <style>
 .custom-bg {
-    background-color: #00ac56;
+    background-color: #009c4e;
 }
 
 .title {
@@ -48,8 +56,12 @@ export default defineComponent({
     color: #fff;
 }
 
+.title:hover {
+    color: #fff;
+}
+
 .list-instituicoes-header {
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
     margin: 1rem;
 }
 
