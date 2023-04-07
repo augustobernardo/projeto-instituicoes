@@ -16,11 +16,11 @@
     <div class="container">
         <ul class="list-group list-group-light">
             <Card route="/about/inst1" titleCard="Instituição 1" localCard="Local 1" />
-            <Card route="/about/inst2" titleCard="Instituição 2" localCard="Local 2" />
-            <Card route="/about/inst3" titleCard="Instituição 3" localCard="Local 3" />
-            <Card route="/about/inst4" titleCard="Instituição 4" localCard="Local 4" />
-            <Card route="/about/inst5" titleCard="Instituição 5" localCard="Local 5" />
-            <Card route="/about/inst6" titleCard="Instituição 6" localCard="Local 6" />
+            <Card route="/about" titleCard="Instituição 2" localCard="Local 2" />
+            <Card route="/about" titleCard="Instituição 3" localCard="Local 3" />
+            <Card route="/about" titleCard="Instituição 4" localCard="Local 4" />
+            <Card route="/about" titleCard="Instituição 5" localCard="Local 5" />
+            <Card route="/about" titleCard="Instituição 6" localCard="Local 6" />
         </ul>
     </div>
 </template>
@@ -38,9 +38,9 @@ export default defineComponent({
 
 </script>
 
-<style scoped>
+<style>
 .custom-bg {
-    background-color: #03b65c;
+    background-color: #00ac56;
 }
 
 .title {

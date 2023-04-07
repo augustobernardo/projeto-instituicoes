@@ -4,17 +4,11 @@ import Home from '../views/Home.vue'
 
 // const childrenRoutes = [
 //     {
-//         path: 'child1',
+//         path: '/:instId',
 //         name: 'Child1',
-//         component: () => import('../views/Child1.vue')
+//         component: () => import('../views/About.vue')
 //     },
-//     {
-//         path: 'child2',
-//         name: 'Child2',
-//         component: () => import('../views/Child2.vue')
-//     }
 // ]
-
 
 const routes = [
     {
@@ -24,9 +18,9 @@ const routes = [
         // children: childrenRoutes
     },
     {
-        path: '/',
+        path: '/home',
         name: 'Home',
-        component: Home
+        component: Home,
     }
 ]
 

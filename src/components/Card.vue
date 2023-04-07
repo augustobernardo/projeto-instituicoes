@@ -5,10 +5,11 @@
                 class="rounded-circle" />
             <div class="ms-3">
                 <p class="fw-bold mb-1">{{ titleCard }}</p>
-                <p class="text-muted mb-0">{{ localCard }}</p>
+                <p class="text-muted mb-0 local">{{ localCard }}</p>
             </div>
         </div>
-        <router-link :to="route" class="btn btn-link btn-rounded btn-sm">
+
+        <router-link :to="route" class="btn btn-link btn-rounded btn-sm router-link">
             <span class="material-icons-round custom-span">
                 chevron_right
             </span>
@@ -39,15 +40,15 @@ export default defineComponent({
 </script>
 
 <style scoped>
-a {
+.router-link {
     font-family: Popins, sans-serif;
     text-decoration: none;
 }
 
 .custom-span {
+    color: black;
     font-size: 1.5rem;
     margin-top: 0.5rem;
-    color: #000;
 }
 .custom-span:hover {
     color: #00bd5e;
@@ -63,4 +64,5 @@ a {
     box-shadow: none;
     transition: all 300ms ease;
 }
+
 </style>
